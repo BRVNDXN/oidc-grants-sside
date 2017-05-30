@@ -10,7 +10,7 @@ var express 		 = require('express'),
       cookieParser   = require('cookie-parser'),
 	  passport  	 = require('passport'),
 	  Auth0Strategy  = require('passport-auth0'),
-	  ensureLoggedIn = require('connect-ensure-login').ensureLoggedIn();;
+	  ensureLoggedIn = require('connect-ensure-login').ensureLoggedIn();
 
 app.set('views', (__dirname + '/views'));
 app.set('view engine', 'ejs');
