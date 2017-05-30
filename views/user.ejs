@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<%- include('_head') %>
+</head>
+<body>
+
+	<div>
+		<img src="<%= user.picture %>">
+		<h2>Welcome <%= user.nickname %>!</h2>
+		<br />
+		<a href="/logout">Logout</a>
+  		<h2>User Profile</h2>
+  		<pre><%= userProfile %></pre>
+	</div>
+
+</body>
+</html>

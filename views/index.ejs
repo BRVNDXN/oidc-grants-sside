@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<%- include('_head') %>
+	<script type="text/javascript">
+		var auth0 = new auth0.WebAuth({
+			domain: 'bthompson.auth0.com',
+			clientID: 'OtEx5hIKm2yxksTI92UKn5p90gQL2N8m',
+			redirectUri: 'http://localhost:3000/callback'
+		});
+		function signinGoogle() {
+		    auth0.authorize({
+		    	connection: 'google-oauth2',
+		    	responseType: 'code'
+		    });
+		}
+		function signinDb() {
+			auth0.redirect.loginWithCredentials({
+				connection: 'Username-Password-Authentication',
+				username: document.getElementById('username').value,
+				password: document.getElementById('password').value,
+				responseType: 'code'
+			});
+		}
+	</script>
+</head>
+<body>
+	<h1>Index Page</h1>
+	<p>Welcome</p>
+	<br />
+	<button onclick="signinGoogle()">Log In with Google</button>
+	<br />
+	<br />
+	<label>Username</label>
+	<input id="username" type="text" name="">
+	<br />
+	<label>Password</label>
+	<input id="password" type="password"/>
+	<br />
+	<button onclick="signinDb()">Log In</button>
+</body>
+</html>

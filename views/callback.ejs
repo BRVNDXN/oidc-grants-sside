@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<%- include('_head') %>
+	<script type="text/javascript">
+		// Use local storage to keep track of the user's token and id.
+	    localStorage.setItem('idToken', '<%= user.extraParams.id_token %>')
+	    localStorage.setItem('userId', '<%= user.profile.id %>')
+
+	    window.location.href = '/user/';
+	</script>
+</head>
+<body>
+
+</body>
+</html>
